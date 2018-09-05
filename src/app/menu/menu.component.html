@@ -1,0 +1,20 @@
+<!-- <p>
+{{navLinks|json}}
+</p> -->
+
+<nav class="navbar navbar-inverse">
+  <ul class='nav navbar-nav'>
+    <li *ngFor='let eachLink of navLinks'>
+      <!-- property binding and interpolation -->
+      <!-- <a [href]=eachLink.linkRef>{{eachLink.linkText}}</a> -->
+      <!-- Event Binding calling showDetails event as argument -->
+      <a [href]=eachLink.linkRef (click)='showDetails($event)'>{{eachLink.linkText}}</a>
+    </li>
+    <li *ngIf = 'showLogin'>
+      <a href='' >Login</a></li>
+      <li *ngIf = 'showLogout'>
+        <a href=''>Logout</a></li>
+    
+  </ul>
+
+</nav>

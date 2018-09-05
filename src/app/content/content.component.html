@@ -1,0 +1,14 @@
+<table class='table table-striped' >
+  <tr>
+    <th>Id</th>
+    <th>name</th>
+    <th>Location</th>
+    <th>Rating</th>
+  </tr>
+  <tr *ngFor='let eachRestaurant of restaurantList'>
+    <td>{{eachRestaurant.id}}</td>
+    <td>{{eachRestaurant.name}}</td>
+    <td>{{eachRestaurant.location}}</td>
+    <td>{{eachRestaurant.rating}}</td>
+  </tr>
+</table>

@@ -1,0 +1,8 @@
+<label>Item</label>>
+<input type='text' [(ngModel)]='item' (change)='change()'>
+<button (click)='addToCart()' class='btn btn-danger' [disabled]='isDisabled'>Add</button>
+<ol>
+  <li *ngFor='let eachItem of cart'>{{eachItem}}</li>
+</ol>
+<app-order-confimed [request]=cart (response)='onChange($event)'></app-order-confimed>
+{{msg}}

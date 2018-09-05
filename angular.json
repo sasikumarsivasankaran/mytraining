@@ -50,7 +50,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "foothub:build"
+            "browserTarget": "foothub:build",
+            "port":4200
           },
           "configurations": {
             "production": {
