@@ -19,8 +19,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
 
     this.service.currentMessage.subscribe(msg => {
-       
-      if(msg === 'logged'){
+
+      if(msg === 'logged') {
         this.showLogout = true;
         this.showLogin = false;
       }

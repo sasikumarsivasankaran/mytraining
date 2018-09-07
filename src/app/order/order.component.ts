@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
+import { CompAdderService } from 'src/app/comp-adder.service';
+import { PaymentComponent } from 'src/app/payment/payment.component';
 
 @Component({
   selector: 'app-order',
@@ -6,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  @ViewChild('placeHolder', {read: ViewContainerRef}) placeHolderRef: ViewContainerRef;
   item: string;
   cart: string[] = [];
   isDisabled = true;
   msg: string;
-  constructor() { }
+  constructor(private service: CompAdderService) { }
 
   ngOnInit() {
   }
@@ -19,7 +22,10 @@ export class OrderComponent implements OnInit {
     this.cart.push(this.item);
     this.item = '';
     this.isDisabled = true;
-
+    
+      this.service.setViewRef(this.placeHolderRef);
+      this.service.addComponent(PaymentComponent);
+    
   }
 
   change() {

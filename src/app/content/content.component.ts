@@ -14,6 +14,10 @@ restaurantList: Restaurant[] = [
   {id: 104, name: 'Dhaba P  oint', location: 'Nandanam', rating: 4.5},
   {id: 105, name: 'Saravana Bhavan', location: 'Velachery', rating: 3}
 ];
+amount = 899.999;
+billDate = new Date();
+
+srchCondition = '';
   constructor() { }
 
   ngOnInit() {

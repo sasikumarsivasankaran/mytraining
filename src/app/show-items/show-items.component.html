@@ -1,0 +1,38 @@
+<div *ngIf='isFormVisible'>
+<!-- <form #f='ngForm' (ngSubmit)='submit()'> -->
+    <form #f='ngForm' (ngSubmit)='submit()' ngNativeValidate>  
+  <div class='from-group'>
+    <label for="">Item Id</label>
+    <input type="text" [(ngModel)]='obj.id' name='id'>
+  </div>
+  <div class='from-group'>
+    <label for="" >Item Name</label>
+    <input type="text" [(ngModel)]='obj.itemName' name='itemName' required>
+    <!-- <input type="text" [(ngModel)]='obj.itemName' name='itemName' required> -->
+  </div>
+  <div class='from-group'>
+    <label for="">Image</label>
+    <input type="text" [(ngModel)]='obj.image' name='image'>
+  </div>
+  <div class='form-group' style = 'width: 250px'>
+    <input type="submit" class="form-control" [value]='btnText'>
+    <!-- <input type="submit" class="form-control" [value]='btnText' class="btn btn-danger"> -->
+  </div>
+</form>
+<!-- to validate the contols -->
+<!-- {{f.invalid}}  -->
+</div>
+
+<table class='table table-bordered'>
+  <tr><button class= 'fa fa-plus fa-2x' (click) = 'showForm()'></button></tr>
+  <tr *ngFor='let eachItem of itemList' >
+    <td>{{eachItem.id}}</td>
+    <td>{{eachItem.itemName}}</td>
+    <td><img [src]=eachItem.image alt="image" ></td>
+    <td><button class='fa fa-edit fa-2x' (click)='edit(eachItem)'></button></td>
+    <td><button class='fa fa-remove fa-2x' (click)='remove(eachItem)'></button></td>
+    <!-- <td><button (click)='edit(eachItem)'>Edit</button></td>
+    <td><button (click)='remove(eachItem)'>Delete</button></td> -->
+
+  </tr>
+</table>

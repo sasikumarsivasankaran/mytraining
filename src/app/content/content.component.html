@@ -1,14 +1,24 @@
 <table class='table table-striped' >
+  {{billDate | date:'full'}}  
+  {{amount | currency :'USD':'symbol':4-2-2}}
   <tr>
     <th>Id</th>
     <th>name</th>
     <th>Location</th>
     <th>Rating</th>
   </tr>
-  <tr *ngFor='let eachRestaurant of restaurantList'>
+  <!-- <tr *ngFor='let eachRestaurant of restaurantList'> -->
+    <tr>
+      <td colspan='2'>Search</td>
+      <td colspan="text"><input type ="text" name='srchCondition' [(ngModel)]=srchCondition></td>
+
+    </tr>
+    <!-- <tr *ngFor="let eachRestaurant of restaurantList | filter :'location':'Chennai'"> -->
+    <tr *ngFor="let eachRestaurant of restaurantList | filter :'location':srchCondition">
     <td>{{eachRestaurant.id}}</td>
-    <td>{{eachRestaurant.name}}</td>
+    <td>{{eachRestaurant.name | uppercase}} </td>
     <td>{{eachRestaurant.location}}</td>
     <td>{{eachRestaurant.rating}}</td>
+    <td><a [routerLink]="['/details',eachRestaurant.id]">ShowMore</a></td>
   </tr>
 </table>

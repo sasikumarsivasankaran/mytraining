@@ -1,5 +1,5 @@
-<div>
-  <app-header></app-header>
+<!-- <div>
+    <app-header></app-header>
 </div>
 <div>
   <app-content></app-content>
@@ -8,11 +8,28 @@
   <app-footer></app-footer>
 </div>
 <div>
-  <app-show-sales-men></app-show-sales-men>
+  <app-show-sales-men appHighLight></app-show-sales-men>
 </div>
 <div>
   <app-order></app-order>
 </div>
 <app-login></app-login>
-<router-outlet></router-outlet>
+<app-show-items></app-show-items> -->
+<div class="container" class = 'bkgroud'>
+  
+  <div style="height: 20%;">
+    <app-header></app-header>
+  </div>
+
+  <div style="height: 60%;">
+      <router-outlet></router-outlet>
+  </div>
+
+  <div style="height: 20%;">
+      <app-footer></app-footer>
+  </div>
+
+</div>
+
+<!-- <router-outlet></router-outlet> -->
 

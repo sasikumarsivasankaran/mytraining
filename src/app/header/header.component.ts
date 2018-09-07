@@ -8,15 +8,15 @@ import { Link } from 'src/app/link';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-logo = 'assets/images/logo.jpg';
+// logo = 'assets/images/logo.jpg';
+logo = 'assets/images/rest.jpg';
 title = 'Food Hub';
-pageLinks: Link[] = [
-    {linkRef: 'home', linkText: 'Home'},
-    {linkRef: 'restaurants', linkText: 'Restaurants'},
-    {linkRef: 'cuisine', linkText: 'Cuisine'},
-    {linkRef: 'history', linkText: 'History'},
-    {linkRef: 'order', linkText: 'Order'},
-    {linkRef: 'salesmen', linkText: 'Sales Team'},
+pageLinks: Link[] = [   
+    {linkRef: 'restaurant', linkText: 'Restaurants'},
+    {linkRef: 'salesMen', linkText: 'Sales Team'},
+    {linkRef: 'items', linkText: 'items'},
+    {linkRef: 'orders', linkText: 'Order'},
+    {linkRef: 'login', linkText: 'Login'},
 ];
   constructor() { }
 

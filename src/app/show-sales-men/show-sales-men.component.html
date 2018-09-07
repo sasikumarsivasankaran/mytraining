@@ -1,13 +1,13 @@
 <!-- {{salesMenList | json}} -->
 <div class = "card-deck">
-  <div class = "card" *ngFor='let eachSalesMan of salesMenList'>
-    <div class = "class-img">
-
+  <div class = 'card' *ngFor='let eachSalesMan of salesMenList'>
+    <div class = 'class-img card-img-top'>
+      <img src ="assets/images/1.jpg" class='img img-circle img-thumbnail' >
     </div>
-    <div class = "class-head">
+    <div class = 'class-head'>
         {{eachSalesMan.firstName}} 
     </div>
-    <div class = "class-body" >
+    <div class = 'class-body' >
         {{eachSalesMan.mobileNumber}} 
 
     </div>
